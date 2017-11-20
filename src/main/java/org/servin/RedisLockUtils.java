@@ -71,6 +71,7 @@ public class RedisLockUtils {
     public void freeLock(){
         List<String> keyList = new ArrayList<String>();
         List<String> argvList = new ArrayList<String>();
+
         keyList.add(key);
         argvList.add(value);
         jedis.eval(UN_LOCK_SCRIPT, keyList, argvList);
